@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Le cite pour Youtubeur</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="topbar">
+        <div class="brand">
+          <div class="big-icon" aria-hidden="true">
+            <span></span>
+          </div>
+          <div>
+            <p class="eyebrow" id="appLabel"></p>
+            <h1 id="appTitle"></h1>
+            <p id="connectedWelcome" class="connected-welcome" hidden>Bienvenue</p>
+            <p id="sessionInfo" class="session-info"></p>
+          </div>
+        </div>
+        <div class="actions">
+          <button id="accountButton" class="secondary-button" type="button">Compte</button>
+          <button id="editButton" class="secondary-button" type="button">Modifier</button>
+          <a id="adminButton" class="secondary-button link-button" href="admin.html" hidden>Adresses</a>
+          <button id="saveButton" class="save-button" type="button" hidden>Enregistrer</button>
+        </div>
+      </section>
+
+      <section id="accountPanel" class="account-panel" aria-label="Compte utilisateur" hidden>
+        <div class="login-intro">
+          <h2>Connexion</h2>
+          <p id="loginIntroText"></p>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Compte">
+          <button id="loginTab" class="tab-button active" type="button">Connexion</button>
+          <button id="signupTab" class="tab-button" type="button">Inscription</button>
+        </div>
+        <label>
+          Identifiant
+          <input id="accountNameInput" type="text" autocomplete="username" />
+        </label>
+        <label id="accountEmailLabel" hidden>
+          Adresse e-mail
+          <input id="accountEmailInput" type="email" autocomplete="email" />
+        </label>
+        <label>
+          Mot de passe
+          <input id="accountPasswordInput" type="password" autocomplete="current-password" />
+        </label>
+        <button id="submitAccountButton" class="primary-button" type="button">Se connecter</button>
+        <button id="logoutButton" class="secondary-button" type="button" hidden>Se deconnecter</button>
+        <p id="accountMessage" class="login-message"></p>
+      </section>
+
+      <section id="loginPanel" class="login-panel" aria-label="Acces proprietaire" hidden>
+        <label>
+          Mot de passe proprietaire
+          <input id="passwordInput" type="password" autocomplete="current-password" />
+        </label>
+        <button id="unlockButton" class="primary-button" type="button">Debloquer</button>
+        <p id="loginMessage" class="login-message"></p>
+      </section>
+
+      <section class="editor-panel" aria-label="Edition rapide">
+        <label>
+          Titre
+          <input id="titleInput" type="text" />
+        </label>
+        <label>
+          Couleur principale
+          <input id="colorInput" type="color" />
+        </label>
+        <label>
+          Texte de connexion
+          <textarea id="loginTextInput" rows="3"></textarea>
+        </label>
+        <label>
+          Titre de l'accueil
+          <input id="homeTitleInput" type="text" />
+        </label>
+        <label>
+          Titre de la partie ouverte
+          <input id="sectionTitleInput" type="text" />
+        </label>
+        <label>
+          Description du bouton
+          <input id="sectionDescriptionInput" type="text" />
+        </label>
+        <label>
+          Lien video de la partie
+          <input id="sectionVideoInput" type="url" />
+        </label>
+        <label>
+          Texte de la partie
+          <textarea id="sectionTextInput" rows="4"></textarea>
+        </label>
+      </section>
+
+      <section id="welcomePanel" class="welcome-panel" hidden>
+        <h2 id="homeTitle"></h2>
+        <p>Tu es connecté. Tu peux maintenant accéder au contenu du site.</p>
+        <div id="sectionLinks" class="section-links"></div>
+      </section>
+
+      <section id="contentPanel" class="content-panel" hidden>
+        <button id="backHomeButton" class="secondary-button" type="button">Retour</button>
+        <h2 id="contentTitle"></h2>
+        <p id="contentText"></p>
+        <div id="contentVideo" class="video-box"></div>
+      </section>
+
+      <section id="cards" class="cards" aria-label="Cartes"></section>
+    </main>
+
+    <template id="cardTemplate">
+      <article class="card">
+        <input class="card-title" type="text" />
+        <textarea class="card-text" rows="4"></textarea>
+        <div class="read-title"></div>
+        <p class="read-text"></p>
+        <button class="delete-button" type="button">Supprimer</button>
+      </article>
+    </template>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
